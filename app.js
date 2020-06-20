@@ -76,7 +76,7 @@ app.get('/', (req, res) => {
 // });
 
 
-app.listen('3000' || process.env.PORT, err => {
+app.listen(process.env.PORT || '3000', err => {
     if (err)
         throw err
     console.log('Server started')
