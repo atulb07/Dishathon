@@ -41,6 +41,15 @@ video.addEventListener('play', () => {
 
 function changeIt(abc) {
     document.getElementById("emotion").innerHTML = abc;
+
+    document.getElementById("changeBg").classList.remove("Sad")
+    document.getElementById("changeBg").classList.remove("Neutral")
+    document.getElementById("changeBg").classList.remove("Surprised")
+    document.getElementById("changeBg").classList.remove("Fearful")
+    document.getElementById("changeBg").classList.remove("Happy")
+
+    document.getElementById("changeBg").classList.add(abc)
+
 }
 
 console.log("hello")
