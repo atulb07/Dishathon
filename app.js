@@ -20,32 +20,32 @@ app.set("view engine", "ejs");
 
 app.use(express.static(('public')));
 
-var imgModel = require('./modules');
+// var imgModel = require('./modules');
 
-var multer = require('multer');
+// var multer = require('multer');
 
-var storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads')
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now())
-    }
-});
+// var storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, 'uploads')
+//     },
+//     filename: (req, file, cb) => {
+//         cb(null, file.fieldname + '-' + Date.now())
+//     }
+// });
 
-var upload = multer({ storage: storage });
+// var upload = multer({ storage: storage });
 
 // Retriving the image 
-app.get('/detect', (req, res) => {
-    imgModel.find({}, (err, items) => {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            res.render('app', { items: items });
-        }
-    });
-});
+// app.get('/detect', (req, res) => {
+//     imgModel.find({}, (err, items) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         else {
+//             res.render('app', { items: items });
+//         }
+//     });
+// });
 
 // Retriving the image 
 app.get('/', (req, res) => {
@@ -54,26 +54,26 @@ app.get('/', (req, res) => {
 
 
 // Uploading the image 
-app.post('/detect', upload.single('image'), (req, res, next) => {
+// app.post('/detect', upload.single('image'), (req, res, next) => {
 
-    var obj = {
-        name: req.body.name,
-        desc: req.body.desc,
-        img: {
-            data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-            contentType: 'image/png'
-        }
-    }
-    imgModel.create(obj, (err, item) => {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            // item.save(); 
-            res.redirect('/');
-        }
-    });
-});
+//     var obj = {
+//         name: req.body.name,
+//         desc: req.body.desc,
+//         img: {
+//             data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+//             contentType: 'image/png'
+//         }
+//     }
+//     imgModel.create(obj, (err, item) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         else {
+//             // item.save(); 
+//             res.redirect('/');
+//         }
+//     });
+// });
 
 
 app.listen('3000' || process.env.PORT, err => {
