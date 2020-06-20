@@ -47,6 +47,8 @@ function changeIt(abc) {
     document.getElementById("changeBg").classList.remove("Surprised")
     document.getElementById("changeBg").classList.remove("Fearful")
     document.getElementById("changeBg").classList.remove("Happy")
+    document.getElementById("changeBg").classList.remove("Angry")
+
 
     document.getElementById("changeBg").classList.add(abc)
 
