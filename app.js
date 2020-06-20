@@ -3,8 +3,8 @@ var app = express()
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose')
 
-var fs = require('fs');
-var path = require('path');
+// var fs = require('fs');
+// var path = require('path');
 
 // Connecting to the database 
 // mongoose.connect("mongodb://localhost/Photo",
