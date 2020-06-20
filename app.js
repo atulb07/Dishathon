@@ -7,10 +7,10 @@ var fs = require('fs');
 var path = require('path');
 
 // Connecting to the database 
-mongoose.connect("mongodb://localhost/Photo",
-    { useNewUrlParser: true, useUnifiedTopology: true }, err => {
-        console.log('connected')
-    });
+// mongoose.connect("mongodb://localhost/Photo",
+//     { useNewUrlParser: true, useUnifiedTopology: true }, err => {
+//         console.log('connected')
+//     });
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
